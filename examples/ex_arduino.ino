@@ -119,7 +119,7 @@ void loop() {
   res = at24.write_arr(0, lv_sd, lv_dim);        // Write array to AT24Cxx memoty at once
   Serial.print(millis() - lv_timest);
   Serial.println(" ms.");
-  Serial.println(res);
+  // Serial.println(res);
   delay(10);    // need to wait to chip finish write command !!!
 
   for (i = 0; i < lv_sd; i++) lv_dim[i]=0;
@@ -129,7 +129,7 @@ void loop() {
   res = at24.read_arr(0, lv_sd, lv_dim);
   Serial.print(millis() - lv_timest);
   Serial.println(" ms.");
-  Serial.println(res);
+  // Serial.println(res);
 
   for (uint16_t i = 0; i < lv_sd; i++) {
     Serial.print(gf_byte2char((uint8_t)(i >> 12)));

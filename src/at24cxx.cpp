@@ -52,12 +52,9 @@ bool AT24Cxx::read_arr(uint16_t _lv_mem_addr, uint16_t _lv_size_dim, char* _lv_d
     Wire.write(_tv_msb);
     Wire.write(_tv_lsb);
     if (Wire.endTransmission() == 0) {
-      Serial.println(Wire.requestFrom(AT24Cxx_addr, _lv_size_dim));
-      Serial.println(Wire.available());
+      Wire.requestFrom(AT24Cxx_addr, _lv_size_dim);
       if (Wire.available() == _lv_size_dim) {
-        for (uint16_t i = 0; i < _lv_size_dim; i++) {
-          _lv_dim[i] = Wire.read();
-        }
+        for (uint16_t i = 0; i < _lv_size_dim; i++) _lv_dim[i] = Wire.read();
         return true;
       }
     }
