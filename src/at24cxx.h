@@ -21,7 +21,7 @@ public:
     AT24Cxx();      // create an object of class 
     bool begin(uint8_t _i2x_addr);
     byte read(uint16_t _lv_mem_addr);
-    bool write(uint16_t _lv_mem_addr, byte data);
+    bool write(uint16_t _lv_mem_addr, uint8_t data);
     bool read_arr(uint16_t _lv_mem_addr, uint16_t _lv_size_dim, char* _lv_dim);
     bool write_arr(uint16_t _lv_mem_addr, uint16_t _lv_size_dim, char* _lv_dim);
 };
