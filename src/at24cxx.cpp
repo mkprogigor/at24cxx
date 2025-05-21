@@ -10,7 +10,7 @@ bool AT24Cxx::begin(uint8_t _i2c_addr) {
     else                              return false;
 }
 
-byte AT24Cxx::read(uint16_t _lv_mem_addr) { // Read byte  
+uint8_t AT24Cxx::read(uint16_t _lv_mem_addr) { // Read byte  
     uint8_t _tv_msb = _lv_mem_addr >> 8;
     uint8_t _tv_lsb = _lv_mem_addr & 0xFF;
     Wire.beginTransmission(AT24Cxx_addr);
